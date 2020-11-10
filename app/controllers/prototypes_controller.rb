@@ -35,6 +35,9 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
   def move_to_index
     unless user_signed_in?
