@@ -22,6 +22,12 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+  
   private
   def move_to_index
     unless user_signed_in?
