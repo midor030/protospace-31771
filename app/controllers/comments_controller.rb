@@ -2,15 +2,17 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to root_path
+      redirect_to prototype_path
     else
-      render "prototypes/show"
+      @prototype = Prototype.all
+      render :@prototypes.show
+
     end
   end
   end
 
   private
   def comment_params
-  params.require(:comment).permit(:title).merge(user_id: current_user.id, prototype_id: params[:prototype_id])
-
+   params.require(:comment).permit(:title).merge(user_id: current_user.id, prototype_id: params[:prototype_id])
+  end
 end
