@@ -30,9 +30,9 @@
       </div>
       <div class="prototype__comments">
         <% if user_signed_in? %>
-          <%= form_with model: [@prototype, @comment] local: true do |f|%>
+          <%= form_with model:[@prototype, @comment] local: true do |f|%>
             <div class="field">
-              <%= f.label :@connebt.text, "コメント" %><br />
+              <%= f.label :@comment.text, "コメント" %><br />
               <%= f.text_field :@comment.text %>
             </div>
             <div class="actions">
